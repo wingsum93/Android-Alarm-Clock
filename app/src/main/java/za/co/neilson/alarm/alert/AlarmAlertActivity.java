@@ -53,8 +53,8 @@ public class AlarmAlertActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		final Window window = getWindow();
 		window.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
-				| WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
-		window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
+				| WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);//for show ehn lock
+		window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON//not sleep screen
 				| WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
 
 		setContentView(R.layout.alarm_alert);
@@ -179,7 +179,7 @@ public class AlarmAlertActivity extends Activity implements OnClickListener {
 	@Override
 	public void onBackPressed() {
 		if (!alarmActive)
-			super.onBackPressed();
+			super.onBackPressed();//prevent exit if alarm is on
 	}
 
 	/*

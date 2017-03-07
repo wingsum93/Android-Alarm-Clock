@@ -74,6 +74,7 @@ public class AlarmPreferencesActivity extends BaseActivity {
 		} else {
 			setMathAlarm(new Alarm());
 		}
+
 		if (bundle != null && bundle.containsKey("adapter")) {
 			setListAdapter((AlarmPreferenceListAdapter) bundle.getSerializable("adapter"));
 		} else {

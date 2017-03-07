@@ -56,7 +56,7 @@ public class AlarmPreferenceListAdapter extends BaseAdapter implements Serializa
 				
 				ringtoneMgr.setType(RingtoneManager.TYPE_ALARM);
 				
-				Cursor alarmsCursor = ringtoneMgr.getCursor();
+				Cursor alarmsCursor = ringtoneMgr.getCursor();//extracting the mobile internal sound
 				
 				alarmTones = new String[alarmsCursor.getCount()+1];
 				alarmTones[0] = "Silent"; 

@@ -14,6 +14,9 @@ package za.co.neilson.alarm.alert;
 import android.content.Context;
 import android.os.PowerManager;
 
+/**
+ * the lock util
+ */
 public class StaticWakeLock {
 	private static PowerManager.WakeLock wl = null;
 

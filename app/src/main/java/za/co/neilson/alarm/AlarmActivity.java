@@ -33,6 +33,9 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
+/**
+ * a act to view list of alarm
+ */
 public class AlarmActivity extends BaseActivity {
 
 	ImageButton newButton;
@@ -60,8 +63,9 @@ public class AlarmActivity extends BaseActivity {
 					public void onClick(DialogInterface dialog, int which) {
 
 						Database.init(AlarmActivity.this);
-						Database.deleteEntry(alarm);
-						AlarmActivity.this.callMathAlarmScheduleService();
+						Database.deleteEntry(alarm);//deleve the old alarm
+						AlarmActivity.this.callMathAlarmScheduleService();//call a broadcast and to service ,
+						//to schedule next coming alarm...
 						
 						updateAlarmList();
 					}

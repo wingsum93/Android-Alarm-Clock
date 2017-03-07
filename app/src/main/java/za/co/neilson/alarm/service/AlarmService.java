@@ -28,6 +28,9 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
+/**
+ *
+ */
 public class AlarmService extends Service {
 
 	@Override
@@ -46,7 +49,7 @@ public class AlarmService extends Service {
 		Log.d(this.getClass().getSimpleName(),"onCreate()");
 		super.onCreate();		
 	}
-
+	//get the latest alarm?????
 	private Alarm getNext(){
 		Set<Alarm> alarmQueue = new TreeSet<Alarm>(new Comparator<Alarm>() {
 			@Override
@@ -63,7 +66,7 @@ public class AlarmService extends Service {
 		});
 				
 		Database.init(getApplicationContext());
-		List<Alarm> alarms = Database.getAll();
+		List<Alarm> alarms = Database.getAll();//extract all alarm in db
 		
 		for(Alarm alarm : alarms){
 			if(alarm.getAlarmActive())
@@ -102,7 +105,7 @@ public class AlarmService extends Service {
 		}else{
 			Intent myIntent = new Intent(getApplicationContext(), AlarmAlertBroadcastReciever.class);
 			myIntent.putExtra("alarm", new Alarm());
-			
+			//set broadcast in some time.... (direct go to broadcast receiver
 			PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, myIntent,PendingIntent.FLAG_CANCEL_CURRENT);			
 			AlarmManager alarmManager = (AlarmManager)getApplicationContext().getSystemService(Context.ALARM_SERVICE);
 			

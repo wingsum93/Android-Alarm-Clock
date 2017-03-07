@@ -11,6 +11,9 @@
  */
 package za.co.neilson.alarm.preferences;
 
+/**
+ * model for save your pref...
+ */
 public class AlarmPreference {
 	
 	public enum Key{

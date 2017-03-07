@@ -26,6 +26,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 
+/**
+ * db model for save alarm
+ */
 public class Alarm implements Serializable {
 
 	public enum Difficulty{
@@ -126,7 +129,7 @@ public class Alarm implements Serializable {
 	 * @return the alarmTime
 	 */
 	public Calendar getAlarmTime() {
-		if (alarmTime.before(Calendar.getInstance()))
+		if (alarmTime.before(Calendar.getInstance()))//+one month?
 			alarmTime.add(Calendar.DAY_OF_MONTH, 1);
 		while(!Arrays.asList(getDays()).contains(Day.values()[alarmTime.get(Calendar.DAY_OF_WEEK)-1])){
 			alarmTime.add(Calendar.DAY_OF_MONTH, 1);			

@@ -32,7 +32,8 @@ import android.database.sqlite.SQLiteOpenHelper;
  * usage:  
  * DatabaseSetup.init(egActivityOrContext); 
  * DatabaseSetup.createEntry() or DatabaseSetup.getContactNames() or DatabaseSetup.getDb() 
- * DatabaseSetup.deactivate() then job done 
+ * DatabaseSetup.deactivate() then job done
+ * stupid class to handle dirty orm usage
  */
 
 public class Database extends SQLiteOpenHelper {

@@ -14,6 +14,9 @@ package za.co.neilson.alarm.alert;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * the logic question to unlock alarm????
+ */
 public class MathProblem {
 
 	enum Operator {
